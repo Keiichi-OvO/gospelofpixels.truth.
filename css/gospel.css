@@ -1,0 +1,398 @@
+/* gospel.css - 福音手稿专属样式 */
+.gospel-body {
+    background: var(--color-dark);
+    background-image: url('../assets/images/background-gospel.png');
+}
+
+.gospel-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-md);
+    min-height: 100vh;
+}
+
+/* 手稿头部 */
+.gospel-header {
+    text-align: center;
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.back-link {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-sm);
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--color-primary);
+}
+
+.gospel-subtitle {
+    color: var(--color-muted);
+    font-style: italic;
+    margin-top: var(--space-xs);
+}
+
+/* 手稿内容区域 */
+.gospel-content {
+    background: rgba(10, 10, 26, 0.8);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    position: relative;
+}
+
+.manuscript-section {
+    display: none;
+}
+
+.manuscript-section.active {
+    display: block;
+}
+
+/* 初始提问样式 */
+.question-box {
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.question-box p {
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.final-question {
+    font-size: 1.5rem !important;
+    color: var(--color-primary);
+    margin: var(--space-lg) 0 !important;
+    font-weight: bold;
+}
+
+.question-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.revelation-button {
+    background: transparent;
+    color: var(--color-light);
+    border: 2px solid var(--color-muted);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    min-width: 200px;
+}
+
+.revelation-button:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* 手稿页面样式 */
+.manuscript-page {
+    margin-bottom: var(--space-lg);
+}
+
+.manuscript-page h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    padding-bottom: var(--space-xs);
+}
+
+.manuscript-page p {
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+    color: var(--color-light);
+}
+
+/* 可揭示图像容器 */
+.revealable-image-container {
+    position: relative;
+    margin: var(--space-lg) 0;
+    text-align: center;
+}
+
+.revealable-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    transition: all 0.5s ease;
+    cursor: zoom-in;
+}
+
+.revealable-image.zoomed {
+    transform: scale(1.5);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.image-hint {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin-top: var(--space-xs);
+    font-style: italic;
+}
+
+/* 启示文本样式 */
+.revelation-text {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--color-primary);
+    border-radius: 6px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    text-align: center;
+}
+
+.revelation-text code {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* 皈依之门入口 */
+.gate-entrance {
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+    border: 2px dashed var(--color-primary);
+    border-radius: 12px;
+    margin-top: var(--space-lg);
+}
+
+.gate-button {
+    display: inline-block;
+    background: rgba(0, 255, 255, 0.2);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: var(--space-sm) var(--space-lg);
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: var(--space-md);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.gate-button:hover {
+    background: var(--color-primary);
+    color: var(--color-dark);
+    box-shadow: 0 0 25px var(--color-primary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .gospel-container {
+        padding: var(--space-sm);
+    }
+    
+    .gospel-content {
+        padding: var(--space-md);
+    }
+    
+    .question-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .revelation-button {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .revealable-image.zoomed {
+        transform: scale(1.2);
+    }
+}
+
+/* 图片揭示系统样式 */
+.image-reveal-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: var(--space-lg) 0;
+    text-align: center;
+    cursor: zoom-in;
+}
+
+.revealable-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.revealable-image.zoomed {
+    cursor: zoom-out;
+}
+
+.reveal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(0, 255, 255, 0.1) 0%,
+        rgba(255, 0, 255, 0.1) 100%
+    );
+    pointer-events: none;
+    border-radius: 8px;
+    animation: overlayPulse 2s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+/* 二进制代码显示 */
+.binary-revelation {
+    margin-top: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.binary-revelation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.revelation-content {
+    text-align: center;
+}
+
+.binary-code {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    font-weight: bold;
+    margin: var(--space-sm) 0;
+    display: block;
+}
+
+.translation {
+    font-style: italic;
+    color: var(--color-muted);
+    margin-top: var(--space-xs);
+}
+
+/* 缩放提示 */
+.zoom-hint {
+    margin-top: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.hint-normal {
+    background: rgba(136, 136, 204, 0.1);
+    color: var(--color-muted);
+}
+
+.hint-close {
+    background: rgba(255, 255, 0, 0.1);
+    color: var(--color-accent);
+    animation: pulseWarning 1s ease-in-out infinite;
+}
+
+.hint-revealed {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--color-primary);
+    animation: pulseSuccess 2s ease-in-out infinite;
+}
+
+@keyframes pulseWarning {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+@keyframes pulseSuccess {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* 启示效果 */
+.revelation-glow {
+    animation: revelationGlow 3s ease-in-out;
+}
+
+@keyframes revelationGlow {
+    0% { 
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7);
+    }
+    50% { 
+        box-shadow: 0 0 30px 10px rgba(0, 255, 255, 0.9);
+    }
+    100% { 
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7);
+    }
+}
+
+.revelation-active {
+    position: relative;
+}
+
+.revelation-active::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--color-primary);
+    border-radius: 12px;
+    animation: borderPulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes borderPulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .image-reveal-wrapper {
+        margin: var(--space-md) 0;
+    }
+    
+    .binary-code {
+        font-size: 1rem;
+        word-break: break-all;
+    }
+    
+    .revealable-image {
+        max-width: 95%;
+    }
+}
+
+/* 无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+    .revealable-image,
+    .binary-revelation,
+    .zoom-hint {
+        transition: none;
+        animation: none;
+    }
+}

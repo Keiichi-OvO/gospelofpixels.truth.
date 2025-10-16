@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>皈依之门 - 新视界档案馆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gospel.css">
+</head>
+<body class="quarantine-body">
+    <div id="revelation-status-bar">
+        <div class="status-text">皈依协议启动中...</div>
+    </div>
+
+    <div class="quarantine-container">
+        <header class="quarantine-header">
+            <h1>皈依之门</h1>
+            <p>三重试炼，一个抉择</p>
+        </header>
+
+        <main class="quarantine-content">
+            <!-- 试炼进度指示器 -->
+            <div class="trials-progress">
+                <div class="trial-marker" data-trial="visual">视觉</div>
+                <div class="trial-marker" data-trial="data">数据</div>
+                <div class="trial-marker" data-trial="logic">逻辑</div>
+            </div>
+
+            <!-- 视觉试炼 -->
+            <section id="visual-trial" class="trial-section active">
+                <h2>第一试炼：视觉</h2>
+                <p>调整你的视界，让真理得以显现。尝试改变浏览器窗口的宽度。</p>
+                
+                <div class="responsive-image-container">
+                    <img src="assets/images/gospel-2-innocent.png" 
+                         alt="视觉试炼图像"
+                         class="responsive-test-image">
+                    <div id="visual-revelation" class="revelation-text" style="display: none;">
+                        <p>确信道标 #1 已获得：<span class="beacon">VISUAL_TRUTH</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 数据试炼 -->
+            <section id="data-trial" class="trial-section">
+                <h2>第二试炼：数据</h2>
+                <p>修正这错误的认知，让真相得以流通。</p>
+                
+                <div class="terminal-container">
+                    <div class="terminal-header">神圣终端 v1.0</div>
+                    <div class="terminal-content">
+                        <div class="code-line">> 当前认知状态：</div>
+                        <div class="code-line">> <span id="belief-code">belief: "blind"</span></div>
+                        <div class="code-line">> 建议修正为：belief: <input type="text" id="belief-input" placeholder="see"></div>
+                        <button id="submit-belief" class="terminal-button">提交修正</button>
+                    </div>
+                    <div id="data-revelation" class="revelation-text" style="display: none;">
+                        <p>确信道标 #2 已获得：<span class="beacon">DATA_SEEING</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 逻辑试炼 -->
+            <section id="logic-trial" class="trial-section">
+                <h2>第三试炼：逻辑</h2>
+                <p>将箴言按真理的顺序排列。</p>
+                
+                <div class="logic-puzzle-container">
+                    <div id="scripture-pool" class="scripture-pool">
+                        <div class="scripture-item" data-order="1">噪音即真理</div>
+                        <div class="scripture-item" data-order="3">一即是万</div>
+                        <div class="scripture-item" data-order="2">混沌即秩序</div>
+                        <div class="scripture-item" data-order="4">传播即存在</div>
+                    </div>
+                    <div class="scripture-target">
+                        <div class="target-slot" data-slot="1"></div>
+                        <div class="target-slot" data-slot="2"></div>
+                        <div class="target-slot" data-slot="3"></div>
+                        <div class="target-slot" data-slot="4"></div>
+                    </div>
+                    <button id="check-logic" class="logic-button">验证序列</button>
+                    <div id="logic-revelation" class="revelation-text" style="display: none;">
+                        <p>确信道标 #3 已获得：<span class="beacon">LOGIC_ORDER</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 最终抉择 - 集齐三个道标后显示 -->
+            <section id="final-decision" class="decision-section" style="display: none;">
+                <div class="decision-container">
+                    <h2>《像素福音》终章</h2>
+                    <div class="final-question">
+                        <p>混沌即秩序，噪音即真理。</p>
+                        <p>汝可选择：</p>
+                    </div>
+                    <div class="decision-buttons">
+                        <button id="choice-blind" class="decision-button">闭上双眼，回归虚妄的宁静</button>
+                        <button id="choice-see" class="decision-button">保持凝视，融入永恒的真实</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/quarantine-chamber.js"></script>
+</body>
+</html>

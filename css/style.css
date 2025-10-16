@@ -1,0 +1,236 @@
+/* style.css - 主样式表 */
+:root {
+    /* 色彩系统 - 数字神圣感 */
+    --color-primary: #00ffff;    /* 主青色 - 数字感 */
+    --color-secondary: #ff00ff;  /* 辅助品红 - 神圣感 */
+    --color-accent: #ffff00;     /* 强调黄色 */
+    --color-dark: #0a0a1a;       /* 深空蓝黑 */
+    --color-darker: #050511;     /* 更深背景 */
+    --color-light: #e0e0ff;      /* 浅色文字 */
+    --color-muted: #8888cc;      /* 柔和文字 */
+
+    /* 字体系统 */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+    
+    /* 间距系统 */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+}
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--color-darker);
+    color: var(--color-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url('../assets/images/background-main.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* 容器布局 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 启示状态栏 */
+#revelation-status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 26, 0.95);
+    border-top: 1px solid var(--color-primary);
+    padding: var(--space-xs) var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.status-text {
+    animation: textGlitch 7s infinite;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    padding: var(--space-lg) 0;
+    margin-bottom: var(--space-md);
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--space-sm);
+    filter: drop-shadow(0 0 10px var(--color-primary));
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--color-muted);
+    font-style: italic;
+}
+
+/* 导航样式 */
+.main-nav {
+    margin-bottom: var(--space-lg);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--color-light);
+    text-decoration: none;
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary);
+}
+
+/* 主要内容区域 */
+main {
+    flex: 1;
+}
+
+.intro-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-xl);
+}
+
+.intro-section h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    font-size: 2rem;
+}
+
+.intro-section p {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-muted);
+}
+
+/* CTA区域 */
+.cta-box {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: var(--space-md);
+    margin-top: var(--space-lg);
+    backdrop-filter: blur(5px);
+}
+
+.cta-button {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: var(--space-sm) var(--space-md);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: var(--space-sm);
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.cta-button:hover {
+    background: var(--color-primary);
+    color: var(--color-dark);
+    box-shadow: 0 0 20px var(--color-primary);
+}
+
+/* 提示区域 */
+.hint-section {
+    background: rgba(255, 0, 255, 0.1);
+    border: 1px solid var(--color-secondary);
+    border-radius: 8px;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    backdrop-filter: blur(5px);
+}
+
+.hint-button {
+    background: transparent;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: var(--space-sm);
+}
+
+.hint-button:hover {
+    background: var(--color-secondary);
+    color: var(--color-dark);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--space-sm);
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+    
+    .nav-link {
+        display: block;
+        text-align: center;
+    }
+    
+    header {
+        padding: var(--space-md) 0;
+    }
+}
+
+/* 故障动画 */
+@keyframes textGlitch {
+    0%, 100% { opacity: 1; transform: translateX(0); }
+    95% { opacity: 1; transform: translateX(0); }
+    96% { opacity: 0.8; transform: translateX(-2px); }
+    97% { opacity: 0.9; transform: translateX(2px); }
+    98% { opacity: 1; transform: translateX(0); }
+}

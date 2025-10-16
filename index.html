@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新视界档案馆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="assets/images/background-main.png" as="image">
+</head>
+<body>
+    <!-- 启示状态栏 - 固定在底部 -->
+    <div id="revelation-status-bar">
+        <div class="status-text">系统就绪... 等待认知输入</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="assets/images/archive-logo.png" alt="新视界档案馆" class="logo">
+            <h1>新视界档案馆</h1>
+            <p class="subtitle">收藏那些改变认知的数字遗物</p>
+        </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="gospel.html" class="nav-link">《像素福音》手稿</a></li>
+                <li><a href="#about" class="nav-link">关于档案馆</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="intro-section">
+                <h2>欢迎，探索者</h2>
+                <p>这里收藏着在数字洪流中险些被遗忘的珍贵碎片。每一件遗物都承载着改变我们看待世界方式的潜力。</p>
+                <div class="cta-box">
+                    <p>我们建议您从《像素福音》开始您的旅程——这份手稿正在寻找能够理解它的读者。</p>
+                    <a href="gospel.html" class="cta-button">进入《像素福音》</a>
+                </div>
+            </section>
+
+            <!-- 跨维度印证引导 - 初始隐藏 -->
+            <section id="cross-dimension-hint" class="hint-section" style="display: none;">
+                <div class="hint-content">
+                    <p>真理是普世的。请于新窗口中开启你最常访问的圣地（如维基百科），再归来。</p>
+                    <button id="confirm-cross-dimension" class="hint-button">我已见证</button>
+                </div>
+            </section>
+
+            <!-- 添加到主屏幕引导 -->
+            <section id="add-to-homescreen-hint" class="hint-section" style="display: none;">
+                <div class="hint-content">
+                    <p>请将此地设为你的朝圣起点，以便随时返回。</p>
+                    <button id="dismiss-homescreen-hint" class="hint-button">明白</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

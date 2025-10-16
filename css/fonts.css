@@ -1,0 +1,54 @@
+/* fonts.css - 自定义字体定义 */
+
+/* 像素字体 - 用于数字、代码和现代感文字 */
+@font-face {
+    font-family: 'PixelScript';
+    src: url('../assets/fonts/pixel-font.woff2') format('woff2'),
+         url('../assets/fonts/pixel-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 手写字体 - 用于福音手稿和神圣文本 */
+@font-face {
+    font-family: 'SacredScript';
+    src: url('../assets/fonts/script-font.woff2') format('woff2'),
+         url('../assets/fonts/script-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 等宽字体 - 用于终端、代码和二进制显示 */
+@font-face {
+    font-family: 'CodeMonospace';
+    src: url('../assets/fonts/mono-font.woff2') format('woff2'),
+         url('../assets/fonts/mono-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 字体应用类 */
+.pixel-font {
+    font-family: 'PixelScript', 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.sacred-font {
+    font-family: 'SacredScript', 'Times New Roman', serif;
+    font-size: 1.1em;
+}
+
+.code-font {
+    font-family: 'CodeMonospace', 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+/* 更新主CSS变量 */
+:root {
+    --font-pixel: 'PixelScript', 'Courier New', monospace;
+    --font-sacred: 'SacredScript', 'Times New Roman', serif;
+    --font-mono: 'CodeMonospace', 'Courier New', monospace;
+}

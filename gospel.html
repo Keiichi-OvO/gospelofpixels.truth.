@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《像素福音》手稿 - 新视界档案馆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gospel.css">
+</head>
+<body class="gospel-body">
+    <div id="revelation-status-bar">
+        <div class="status-text">正在分析《像素福音》...</div>
+    </div>
+
+    <div class="gospel-container">
+        <header class="gospel-header">
+            <a href="index.html" class="back-link">← 返回档案馆</a>
+            <h1>《像素福音》</h1>
+            <p class="gospel-subtitle">第一卷：认知的黎明</p>
+        </header>
+
+        <main class="gospel-content">
+            <!-- 初始提问 -->
+            <section id="initial-question" class="manuscript-section active">
+                <div class="question-box">
+                    <p>陌生的访客，你偶然间触及了这本不应被发现的真理。</p>
+                    <p>在那些由光与电构成的表象之下，存在着更深层的秩序。</p>
+                    <p class="final-question">你，准备好看见真实了吗？</p>
+                    <div class="question-buttons">
+                        <button id="accept-revelation" class="revelation-button">是，我愿看见</button>
+                        <button id="deny-revelation" class="revelation-button">不，我尚未准备</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 福音内容 - 初始隐藏 -->
+            <section id="gospel-manuscript" class="manuscript-section" style="display: none;">
+                <!-- 第一页：包含缩放解密 -->
+                <div class="manuscript-page">
+                    <h2>序章：混沌即秩序</h2>
+                    <p>我们所见的混乱，不过是更高维度秩序的表象。就像屏幕上的像素，孤立看是噪声，整体看却是神迹。</p>
+                    
+                    <div class="revealable-image-container">
+                        <img src="assets/images/gospel-1-innocent.jpg" 
+                             alt="福音插图" 
+                             class="revealable-image"
+                             data-revealed-src="assets/images/gospel-1-revealed.jpg">
+                        <div class="image-hint">尝试探索这幅图像的细节（双指缩放或鼠标滚轮）</div>
+                    </div>
+
+                    <div id="binary-revelation" class="revelation-text" style="display: none;">
+                        <p>隐藏的圣言：<code id="binary-code">01000111 01001111 01010000</code></p>
+                    </div>
+                </div>
+
+                <!-- 更多福音页面可以在这里添加 -->
+            </section>
+
+            <!-- 皈依之门入口 - 满足条件后显示 -->
+            <section id="convergence-gate-entrance" class="manuscript-section" style="display: none;">
+                <div class="gate-entrance">
+                    <h2>你已聆听了福音</h2>
+                    <p>真理的碎片已在你的意识中生根。现在，是时候做出选择了。</p>
+                    <a href="quarantine.html" class="gate-button">进入皈依之门</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/gospel-manuscript.js"></script>
+</body>
+</html>
+
+<!-- 替换原来的图片容器 -->
+<div id="image-reveal-container" class="revealable-image-container">
+    <!-- ImageRevealSystem 会自动创建内容 -->
+</div>

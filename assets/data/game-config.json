@@ -1,0 +1,47 @@
+{
+  "game": {
+    "title": "像素福音",
+    "version": "1.0.0",
+    "author": "新视界档案馆",
+    "description": "一个关于数字神圣与认知危机的替代现实游戏"
+  },
+  
+  "timing": {
+    "statusBarUpdate": 8000,
+    "hintDisplayDelay": 30000,
+    "homeScreenHintDelay": 60000,
+    "revelationDelay": 2000,
+    "autoAdvanceDelay": 2000
+  },
+  
+  "interaction": {
+    "zoomSensitivity": 0.1,
+    "zoomRevealThreshold": 2.0,
+    "maxZoom": 3.0,
+    "minZoom": 0.5
+  },
+  
+  "colors": {
+    "primary": "#00ffff",
+    "secondary": "#ff00ff", 
+    "accent": "#ffff00",
+    "dark": "#0a0a1a",
+    "darker": "#050511",
+    "light": "#e0e0ff",
+    "muted": "#8888cc"
+  },
+  
+  "fonts": {
+    "main": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
+    "pixel": "PixelScript, Courier New, monospace",
+    "sacred": "SacredScript, Times New Roman, serif",
+    "mono": "CodeMonospace, Courier New, monospace"
+  },
+  
+  "storageKeys": {
+    "progress": "gop_progress",
+    "ending": "gop_ending_chosen",
+    "completion": "gop_completion_timestamp",
+    "playerId": "gop_player_id"
+  }
+}

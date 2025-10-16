@@ -1,0 +1,229 @@
+/* glitch-effects.css - 故障动画效果库 */
+
+/* 文字故障效果 */
+.text-glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.text-glitch::before,
+.text-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.text-glitch::before {
+    animation: glitch-1 0.6s infinite linear alternate-reverse;
+    color: var(--color-secondary);
+    z-index: -1;
+}
+
+.text-glitch::after {
+    animation: glitch-2 0.6s infinite linear alternate-reverse;
+    color: var(--color-primary);
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, 0); }
+    40% { transform: translate(-2px, 0); }
+    60% { transform: translate(2px, -2px); }
+    80% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0); }
+}
+
+/* 图像故障效果 */
+.image-glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.image-glitch img {
+    display: block;
+}
+
+.image-glitch::before,
+.image-glitch::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0;
+}
+
+.image-glitch:hover::before {
+    animation: image-glitch-1 0.3s infinite;
+    background: var(--color-secondary);
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+}
+
+.image-glitch:hover::after {
+    animation: image-glitch-2 0.3s infinite;
+    background: var(--color-primary);
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+}
+
+@keyframes image-glitch-1 {
+    0% { transform: translate(0); clip-path: inset(0 0 0 0); }
+    20% { transform: translate(-4px, 2px); clip-path: inset(10% 0 30% 0); }
+    40% { transform: translate(-2px, -2px); clip-path: inset(20% 0 20% 0); }
+    60% { transform: translate(4px, 2px); clip-path: inset(40% 0 10% 0); }
+    80% { transform: translate(2px, -2px); clip-path: inset(10% 0 30% 0); }
+    100% { transform: translate(0); clip-path: inset(0 0 0 0); }
+}
+
+@keyframes image-glitch-2 {
+    0% { transform: translate(0); clip-path: inset(0 0 0 0); }
+    20% { transform: translate(4px, -2px); clip-path: inset(30% 0 10% 0); }
+    40% { transform: translate(2px, 2px); clip-path: inset(20% 0 20% 0); }
+    60% { transform: translate(-4px, -2px); clip-path: inset(10% 0 40% 0); }
+    80% { transform: translate(-2px, 2px); clip-path: inset(30% 0 10% 0); }
+    100% { transform: translate(0); clip-path: inset(0 0 0 0); }
+}
+
+/* 扫描线效果 */
+.scanlines {
+    position: relative;
+}
+
+.scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 255, 255, 0.03) 51%
+    );
+    background-size: 100% 4px;
+    z-index: 10;
+    pointer-events: none;
+    animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* 噪声纹理效果 */
+.noise-texture {
+    position: relative;
+}
+
+.noise-texture::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" opacity="0.1"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.1;
+    animation: noise 0.4s infinite;
+}
+
+@keyframes noise {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-1%, -1%); }
+    20% { transform: translate(1%, 1%); }
+    30% { transform: translate(-1%, 1%); }
+    40% { transform: translate(1%, -1%); }
+    50% { transform: translate(-1%, 0); }
+    60% { transform: translate(1%, 0); }
+    70% { transform: translate(0, -1%); }
+    80% { transform: translate(0, 1%); }
+    90% { transform: translate(-1%, -1%); }
+}
+
+/* 脉冲光晕效果 */
+.pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from {
+        box-shadow: 
+            0 0 5px var(--color-primary),
+            0 0 10px var(--color-primary),
+            0 0 15px var(--color-primary);
+    }
+    to {
+        box-shadow: 
+            0 0 10px var(--color-primary),
+            0 0 20px var(--color-primary),
+            0 0 30px var(--color-primary),
+            0 0 40px var(--color-primary);
+    }
+}
+
+/* 数字雨效果（用于背景） */
+.digital-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.digital-rain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--color-primary) 50%,
+        transparent 100%
+    );
+    background-size: 100% 4px;
+    animation: digitalRain 20s linear infinite;
+}
+
+@keyframes digitalRain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* 响应式故障效果 */
+@media (max-width: 768px) {
+    .text-glitch::before,
+    .text-glitch::after {
+        animation-duration: 1s;
+    }
+    
+    .image-glitch:hover::before,
+    .image-glitch:hover::after {
+        animation-duration: 0.5s;
+    }
+}
